@@ -1,4 +1,6 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, Component } from "react";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import 'bootstrap/dist/js/bootstrap.bundle.min';
 import {
   BrowserRouter as Router,
   Switch,
@@ -30,10 +32,10 @@ export default function App() {
             renders the first one that matches the current URL. */}
         <Switch>
           <Route path="/RtB">
-            <About />
+            <RtB />
           </Route>
           <Route path="/BtR">
-            <Users />
+            <BtR />
           </Route>
           <Route path="/">
             <Info />
@@ -95,10 +97,12 @@ function Info() {
   );
 }
 
-function About() {
-  return <h2>Konversi Rupiah ke Bitcoin</h2>;
+function RtB() {
+    return (
+          <h2>React Form Validation Demo</h2>
+    );
 }
 
-function Users() {
+function BtR() {
   return <h2>Konversi Bitcoin ke Rupiah</h2>;
 }
