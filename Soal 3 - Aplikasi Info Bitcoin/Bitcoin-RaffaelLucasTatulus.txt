@@ -20,19 +20,18 @@ export default function App() {
         <nav>
           <ul>
             <li>
-              <Link to="/">Info</Link>
+              <Link onClick={() => {window.location.href="/"}}>Info</Link>
             </li>
             <li>
-              <Link to="/RtB">Konversi Rupiah ke Bitcoin</Link>
+              <Link onClick={() => {window.location.href="/RtB"}}>Konversi Rupiah ke Bitcoin</Link>
             </li>
             <li>
-              <Link to="/BtR">Bitcoin ke Rupiah</Link>
+              <Link onClick={() => {window.location.href="/BtR"}}>Bitcoin ke Rupiah</Link>
             </li>
           </ul>
         </nav>
 
-        {/* A <Switch> looks through its children <Route>s and
-            renders the first one that matches the current URL. */}
+
         <Switch>
           <Route path="/RtB">
             <RtB />
@@ -118,7 +117,6 @@ function RtB() {
     axios.get(konvBitcoin + "tobtc?currency=USD&value=" + usd).then((response) => {
       setPost(response.data);
     });
-    console.log(usd);
   }
   return (
     <SafeAreaView>
@@ -152,7 +150,6 @@ function BtR() {
     var btc = event.target.value;
     var usd = post.USD.sell * btc;
     setRp(usd * 14000);
-    console.log(usd);
   }
   return (
     <SafeAreaView>
